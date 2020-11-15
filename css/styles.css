@@ -18,31 +18,6 @@ footer, main, header {
     padding: 20px;
 }
 
-/* CONTENT */
-.content {
-    padding: 20px;
-}
-
-.google_user-information {
-    display: none;
-    padding: 50px;
-    border: 1px solid gray;
-    margin-left: 20px;
-}
-
-.google_user-information label {
-    font-weight: bold;
-}
-
-.google_login-logout {
-    padding: 20px;
-    display: inline-block;
-}
-
-.google_logout-wrapper {
-    display: none;
-}
-
 /* FOOTER */
 #footer {
     padding: 20px 20px 10px 20px;
