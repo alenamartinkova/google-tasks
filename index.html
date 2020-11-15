@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-signin-client_id" content="278125693772-q2nugd3ppenv2aacd8jmh2tlbs1aetms.apps.googleusercontent.com">
+    <title>VIA PROJECT A</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="js/my-scripts.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Sticky navbar-->
+    <header class="header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+            <div class="container"><a class="navbar-brand" href="#">
+                <strong class="h6 mb-0 font-weight-bold text-uppercase">VIA PROJECT A</strong></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Disabled</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="main" style="height: 650px">
+        <div class="content">
+            <p>
+                This website is used to show your Google Notes and makes a graph from them.
+                To use this feature please login to your Google Account. Enjoy!
+            </p>
+        </div>
+        <div class="login-wrapper">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
+
+        <div class="logout-wrapper">
+            <a href="#" onclick="signOut();">Sign out</a>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="dark-bg policy-row">
+            <div class="policy-first">
+                <p>&copy; 2020 MAR0702 School Project</p>
+                <p>Legal Notice</p>
+                <p>Terms & Conditions</p>
+            </div>
+            <div class="policy-second">
+                <a href="https://linkedin.com/in/alena-martinkova/" target="_blank"><img src="images/linkedin.jpg"></a>
+                <a href="https://facebook.com/martinkova.a" target="_blank"><img src="images/facebook.png"></a>
+                <a href="https://instagram.com/alenka_martinka" target="_blank"><img src="images/instagram.png"></a>
+                <a href="https://twitter.com/a__martinkova" target="_blank"><img src="images/twitter.png" style="max-width: 29px;"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
