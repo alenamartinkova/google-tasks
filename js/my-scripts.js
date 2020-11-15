@@ -1,10 +1,10 @@
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    $(".logout-wrapper").css('display', 'block');
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    $(".google_logout-wrapper").css('display', 'block');
+    $(".google_user-information").css('display', 'inline-block');
+    $("#username").html(profile.getName());
+    $("#useremail").html(profile.getEmail());
+    $("#userimage")[0].src = profile.getImageUrl();
 }
 
 function signOut() {
@@ -12,5 +12,6 @@ function signOut() {
     auth2.signOut().then(function () {
         console.log('User signed out.');
     });
-    $(".logout-wrapper").css('display', 'none');
+    $(".google_logout-wrapper").css('display', 'none');
+    $(".google_user-information").css('display', 'none');
 }

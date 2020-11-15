@@ -34,12 +34,25 @@
                 To use this feature please login to your Google Account. Enjoy!
             </p>
         </div>
-        <div class="login-wrapper">
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        </div>
+        <div class="google_wrapper">
+            <div class="google_user-information">
+                <label for="username">Name:</label>
+                <p id="username"></p>
+                <label for="useremail">Email:</label>
+                <p id="useremail"></p>
+                <label for="userimage">Image:</label>
+                <img id="userimage" src="" alt="image">
+            </div>
 
-        <div class="logout-wrapper">
-            <a href="#" onclick="signOut();">Sign out</a>
+            <div class="google_login-logout">
+                <div class="google_login-wrapper">
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                </div>
+
+                <div class="google_logout-wrapper">
+                    <a href="#" onclick="signOut();">Sign out</a>
+                </div>
+            </div>
         </div>
     </main>
     <footer id="footer">
