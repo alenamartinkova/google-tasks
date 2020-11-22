@@ -149,6 +149,8 @@
                     for (var i = 0; i < taskLists.length; i++) {
                         html += "<div id='"+taskLists[i].id+"' class='task-list-wrapper' data-count='0'>" +
                             "<li class='task-list-item'>" + taskLists[i].title + "</li>" +
+                            "<textarea class='add-task-area'></textarea><br>" +
+                            "<button class='add-task' onclick='addTask(this)'>Add task</button>" +
                             "</div>";
                         viewTasks(taskLists[i].id);
                     }
@@ -175,6 +177,21 @@
                     addTaskToList(listData[i].title, tasklistID);
                 }
             })
+        }
+
+        /**
+         * Function that adds task to list
+         * @param e clicked element
+         */
+        function addTask(e) {
+            var tasklistID = $(e).parent()[0].id;
+            var title =  $(e).parent().find('textarea').val();
+
+            gapi.client.tasks.tasks.insert({
+                'tasklist': tasklistID,
+                'title': title
+            }).then(function(response){});
+            window.location.reload();
         }
 
         /**
@@ -219,16 +236,14 @@
                         label: 'Tasks',
                         data: tasksForChartData,
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)'
+                            'rgba(131, 228, 226, 0.2)',
+                            'rgba(162, 237, 86, 0.2)',
+                            'rgba(166, 169, 163, 0.2)',
                         ],
                         borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
+                            'rgba(119, 208, 206, 1)',
+                            'rgba(149, 223, 75, 1)',
+                            'rgba(138, 141, 134, 1)',
                         ],
                         borderWidth: 1
                     }]
