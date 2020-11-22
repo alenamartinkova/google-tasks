@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Google Tasks API Quickstart</title>
+    <title>VIA PROJECT A</title>
     <meta charset="utf-8" />
     <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -12,20 +13,18 @@
     <header class="header sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
             <div class="container"><a class="navbar-brand" href="#">
-                <strong class="h6 mb-0 font-weight-bold text-uppercase">VIA PROJECT A</strong></a>
+                <strong class="h6 mb-0 font-weight-bold text-uppercase blue">VIA PROJECT A</strong></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Disabled</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <main id="main">
-        <h1>Google Tasks API Quickstart</h1>
+        <h1 class="gray">Google Tasks API</h1>
         <div id="content"></div>
         <div id="graph"></div>
 
@@ -92,7 +91,7 @@
                 authorizeButton.onclick = handleAuthClick;
                 signoutButton.onclick = handleSignoutClick;
             }, function(error) {
-                appendPre(JSON.stringify(error, null, 2));
+                $("#content").html(JSON.stringify(error, null, 2));
             });
         }
 
@@ -104,10 +103,12 @@
             if (isSignedIn) {
                 authorizeButton.style.display = 'none';
                 signoutButton.style.display = 'block';
+                $("#content").css('display', 'block');
                 listTaskLists();
             } else {
                 authorizeButton.style.display = 'block';
                 signoutButton.style.display = 'none';
+                $("#content").css('display', 'none');
             }
         }
 
@@ -130,7 +131,7 @@
          */
         function listTaskLists() {
             gapi.client.tasks.tasklists.list({}).then(function(response) {
-                var html = "<h2>Task lists: </h2><ol class='gradient-list task-lists-ol'>";
+                var html = "<h2 class='gray'>Task lists: </h2><ol class='gradient-list task-lists-ol'>";
                 var taskLists = response.result.items;
                 if (taskLists && taskLists.length > 0) {
                     for (var i = 0; i < taskLists.length; i++) {
@@ -172,7 +173,7 @@
          */
         function addTaskToList(data, wrapperID) {
             var wrapperDIV = $("#"+wrapperID);
-            var html = "<p>"+data+"</p>";
+            var html = "<div id='diamond'></div><p class='task'>"+data+"</p><br>";
             wrapperDIV.append(html);
         }
     </script>

@@ -1,14 +1,25 @@
+* {
+    font-family: "Open Sans", sans-serif;
+}
+
 footer, main, header {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* HEADER */
-.header {
-    background-color: #00d2ff;
-    background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 100%);
+.blue {
+    color: #83e4e2;
 }
 
+.green {
+    color: #a2ed56;
+}
+
+.gray {
+    color: rgba(0,0,0,.5);
+}
+
+/* HEADER */
 .header .container {
     max-width: 1200px;
 }
@@ -25,7 +36,6 @@ footer, main, header {
     color: #636363;
     background-color: #333333;
 }
-
 
 .policy-row {
     display: flex;
@@ -82,6 +92,8 @@ footer, main, header {
 
 .gradient-list li {
     background: white;
+    color: #a2ed56;
+    font-weight: bold;
     border-radius: 0 0.5rem 0.5rem 0.5rem;
     counter-increment: gradient-counter;
     margin-top: 1rem;
@@ -92,7 +104,7 @@ footer, main, header {
 }
 
 .gradient-list li::before, .gradient-list li::after {
-     background: linear-gradient(135deg,#83e4e2 0%, #a2ed56 100%);
+     background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
      border-radius: 1rem 1rem 0 1rem;
      content: '';
      height: 3rem;
@@ -113,4 +125,43 @@ footer, main, header {
     justify-content: flex-end;
     padding: 0.125em 0.25em;
     z-index: 1;
+}
+
+.task {
+    display: inline-block;
+    margin: 0 0 0 30px;
+}
+
+#diamond {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #83e4e2;
+    position: relative;
+    top: 13px;
+}
+
+#diamond:after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #83e4e2;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#signout_button, #authorize_button {
+    border-radius: 8px;
+    background-color: #a2ed56;
+    box-shadow: none;
+    padding: 3px 30px;
+    border: 1px solid rgba(0,0,0,.5);
 }

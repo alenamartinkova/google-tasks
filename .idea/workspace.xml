@@ -17,9 +17,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="418" y="185" width="604" height="548" key="find.popup" timestamp="1606047448184">
+    <state x="418" y="193" width="604" height="548" key="find.popup" timestamp="1606050986596">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="418" y="185" width="604" height="548" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1606047448184" />
+    <state x="418" y="193" width="604" height="548" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1606050986596" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606052580939">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1606052580939" />
   </component>
 </project>
