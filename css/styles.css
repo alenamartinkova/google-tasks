@@ -158,10 +158,27 @@ footer, main, header {
     justify-content: flex-end;
 }
 
-#signout_button, #authorize_button {
+button {
     border-radius: 8px;
     background-color: #a2ed56;
     box-shadow: none;
-    padding: 3px 30px;
+    padding: 3px 0;
+    margin-bottom: 20px;
+    width: 180px;
     border: 1px solid rgba(0,0,0,.5);
+}
+
+.chart-wrapper {
+    display: none;
+    text-align: -webkit-center;
+}
+
+.show-chart {
+    display: none;
+}
+
+#myChart {
+    margin: 80px 0;
+    max-height: 600px;
+    max-width: 800px;
 }

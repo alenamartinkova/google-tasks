@@ -10,6 +10,13 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="PropertiesComponent">
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -17,13 +24,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="418" y="193" width="604" height="548" key="find.popup" timestamp="1606050986596">
+    <state x="418" y="208" width="604" height="548" key="find.popup" timestamp="1606055651323">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="418" y="193" width="604" height="548" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1606050986596" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606052580939">
+    <state x="418" y="208" width="604" height="548" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1606055651323" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1606053609435">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1606052580939" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1606053609435" />
   </component>
 </project>
