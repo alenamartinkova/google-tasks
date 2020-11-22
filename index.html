@@ -25,13 +25,15 @@
         </nav>
     </header>
     <main id="main">
-        <p>Google Tasks API Quickstart</p>
+        <h1>Google Tasks API Quickstart</h1>
+        <div id="content"></div>
+        <div id="graph"></div>
 
         <!--Add buttons to initiate auth sequence and sign out-->
-        <button id="authorize_button" style="display: none;">Sign in</button>
-        <button id="signout_button" style="display: none;">Sign Out</button>
-
-        <pre id="content" style="white-space: pre-wrap;"></pre>
+        <div class="buttons">
+            <button id="authorize_button" style="display: none;">Sign in</button>
+            <button id="signout_button" style="display: none;">Sign Out</button>
+        </div>
     </main>
     <footer id="footer">
         <div class="dark-bg policy-row">
@@ -124,35 +126,54 @@
         }
 
         /**
-         * Append a pre element to the body containing the given message
-         * as its text node. Used to display the results of the API call.
-         *
-         * @param {string} message Text to be placed in pre element.
-         */
-        function appendPre(message) {
-            var pre = document.getElementById('content');
-            var textContent = document.createTextNode(message + '\n');
-            pre.appendChild(textContent);
-        }
-
-        /**
          * Print task lists.
          */
         function listTaskLists() {
-            gapi.client.tasks.tasklists.list({
-                'maxResults': 10
-            }).then(function(response) {
-                appendPre('Task Lists:');
+            gapi.client.tasks.tasklists.list({}).then(function(response) {
+                var html = "<h2>Task lists: </h2><ol class='gradient-list task-lists-ol'>";
                 var taskLists = response.result.items;
                 if (taskLists && taskLists.length > 0) {
                     for (var i = 0; i < taskLists.length; i++) {
-                        var taskList = taskLists[i];
-                        appendPre(taskList.title + ' (' + taskList.id + ')');
+                        html += "<div id='"+taskLists[i].id+"' class='task-list-wrapper'>" +
+                            "<li class='task-list-item'>" + taskLists[i].title + "</li>" +
+                            "</div>";
+                        viewTasks(taskLists[i].id);
                     }
+
+                    html += "</ol>";
+                    $("#content").html(html);
                 } else {
-                    appendPre('No task lists found.');
+                    $("#content").html('No task lists found.');
                 }
             });
+        }
+
+        /**
+         * Function that returns all tasks from one list and appends it as HTML
+         * @param tasklistID task list ID
+         */
+        function viewTasks(tasklistID) {
+            gapi.client.tasks.tasks.list({
+                'tasklist': tasklistID
+            }).then(function(response){
+
+                var listData = response.result.items;
+
+                for (var i = 0; i < listData.length; i++) {
+                    addTaskToList(listData[i].title, tasklistID);
+                }
+            })
+        }
+
+        /**
+         * Function that appends task to list
+         * @param {String} data task title
+         * @param {String} wrapperID div id
+         */
+        function addTaskToList(data, wrapperID) {
+            var wrapperDIV = $("#"+wrapperID);
+            var html = "<p>"+data+"</p>";
+            wrapperDIV.append(html);
         }
     </script>
 
